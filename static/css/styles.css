@@ -1,0 +1,137 @@
+body{
+	background: #fff;
+	font-family: "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp";
+}
+input{
+	outline: none;
+}
+.main-color{
+	color: #edbd03;
+}
+.inline{
+	display: inline;
+}
+.80p{
+	width: 80%;
+}
+.pointer{
+	cursor: pointer;
+}
+.carousel-inner .item img, .carousel-inner .item a img{
+	width: 100%;
+	height: 500px;
+}
+.carousel-description{
+	position: absolute;
+	left: 200px;
+	top: 100px;
+	color: #fff;
+	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3);
+}
+.login-logo{
+	position: absolute;
+	z-index: 100;
+	top: 500px;
+	left: 50%;
+	cursor: pointer;
+}
+.login-logo-bg{
+	position: absolute;
+	left: -110px;
+	top: -110px;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	border: 110px dashed rgba(0, 0, 0, 0.1);
+	border-radius: 110px;
+}
+.login-logo-img{
+	position: absolute;
+	left: -100px;
+	top: -100px;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	border: 100px dashed rgba(0, 0, 0, 0.3);
+	border-radius: 100px;
+}
+.login-logo-img img{
+	position: absolute;
+	left: -100px;
+	top: -100px;
+	width: 200px;
+	height: 200px;
+}
+.container{
+	margin: 0 auto;
+	bottom: 0;
+	width: 800px;
+	padding-top: 110px;
+}
+.header h1{
+	color: #999;
+	font-size: 50px;
+	font-family: "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp";
+}
+h1 small{
+	font-family: "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp";
+}
+.center-col,
+.login-form,
+.register-form,
+.forget-pwd-form{
+	margin: 0 auto;
+	display: block;
+	width: 300px;
+	padding-top: 30px;
+	margin-bottom: 30px;
+}
+.login-form .form-group input{
+	margin-top: 10px;
+	height: 50px;
+}
+.login-btn-group .login-form-btn{
+	width: 145px;
+	color: #777;
+}
+.login-btn-group #registerBtn{
+	background: #F6F9A6;
+	border-color: #F6F9A6;
+}
+.login-btn-group #registerBtn:hover{
+	background: #FDD13E;
+}
+.usr-info{
+	display: block;
+	margin-top: 70px;
+	min-height: 300px;
+	width: 100%;
+}
+.usr-info h1{
+	color: #999;
+}
+.usr-info-left-col{
+	float: left;
+	width: 20%;
+	min-height: 70px;
+}
+.usr-info-left-col .avatar{
+	width: 100%;
+	height: 180px;
+}
+.usr-info-right-col{
+	float: left;
+	padding-left: 70px;
+	width: 80%;
+}
+.datepicker{
+	position: relative;
+	top: -30px;
+}
+#footer{
+	display: block;
+	margin-top: 100px;
+	width: 100%;
+	line-height: 30px;
+	text-align: center;
+}

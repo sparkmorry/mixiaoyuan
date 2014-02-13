@@ -1,0 +1,409 @@
+@font-face {
+	font-family: "inconsolata";
+	src: url("../fonts/inconsolata.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+#bdshare{
+	right: 13px !important;
+}
+body{
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-family: "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp";
+}
+::-webkit-scrollbar {
+  width: 13px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #777;/*#276677;*/
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;/*#3db4b2;*/
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #ddd;
+}
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+h1,h2,h3,h4,b{
+	color: #000;
+	font-family: "inconsolata", "NSimSun", "SimSun", "STSong", "AR PL SungtiL GB", "TW\-Sung", "WenQuanYi Bitmap Song";
+}
+a,
+a:link,
+a:visited{
+	text-decoration: none;
+	cursor: pointer;
+	color: #276677;
+}
+a:hover{
+	color: #EDBD03;
+}
+ul { list-style-type:none; padding: 0;}
+ul li { margin:0; padding:0; }
+small{
+	font-size: 60%;
+	font-weight: normal;
+	font-family: "inconsolata";
+}
+blockquote{
+	color:#666666;
+	margin:0;
+	padding-left: 3em;
+	border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+pre code{
+	font-family: "inconsolata";
+	overflow-x: auto;
+}
+.animation{
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.grey-color{
+	color: #777;
+}
+.border-bottom{
+	border-bottom: 1px solid #777;
+}
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right;
+}
+.full-width{
+	width: 100%;
+}
+.half-width{
+	width: 50%;
+}
+.half-height{
+	height: 50%;
+}
+.text-left{
+	text-align: left;
+}
+.text-center{
+	text-align: center;
+}
+.text-right{
+	text-align: right;
+}
+.btn{
+	background: #EDBD03;
+	color: #eee;
+	padding: 10px 0;
+	text-align: center;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+.btn:hover{
+	color: #fff;
+}
+.show-bg{
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+}
+.left-col-bar{
+	z-index: -1;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 30%;
+	height: 100%;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.left-btn{
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	bottom: 0;
+	width: 150px;
+	cursor: pointer;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.right-col-bar{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	box-shadow: -5px 0 5px rgba(0, 0, 0, 0.3);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	overflow: hidden;
+}
+.go-top{
+  z-index: 100;
+  position: fixed;
+  right: 2%;
+  bottom: 50px;
+  width: 100px;
+  display: none;
+  color: #276677;
+  text-align: center;
+  line-height: 40px;
+  font-size: 15px;
+}
+.go-top:hover{
+  color: #3db4b2;
+}
+#pComment{
+	margin-top: 40px;
+	width: 100%;
+	border: 0;
+}
+#pShare{
+	margin-top: 10px;
+}
+.header{
+	z-index: 100;
+	float: left;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 225px;
+}
+.header .logo{
+	position: absolute;
+	left: 50px;
+	top: 25px;
+	height: 200px;
+}
+.header .banner{
+	z-index: -1;
+	float: left;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 120px;
+	background: #EDBD03;
+}
+.blog-header{
+	float: left;
+	margin: 0 0;
+	left: 0;
+	height: 60px;
+	line-height: 60px;
+	font-family: "Century Gothic";
+}
+.blog-header a{
+	color: #3db4b2;
+}
+.blog-header a:hover{
+	color: #276677;
+}
+.nav{
+	z-index: 100;
+	position: absolute;
+	right: 50px;
+	top: 0;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+}
+.nav li{
+	display: inline-block;
+	float: left;
+	margin-right: 20px;
+	height: 100%;
+	color: #ddd;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+}
+.nav li a,
+.nav li a:visited
+.nav li a:link{
+	color: #eee;
+}
+.nav li a:hover{
+	color: #fff;
+}
+.nav .selected{
+	color: #fff;
+}
+#dark{
+	display: none;
+	z-index: 25;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+}
+#showContainer{
+	position: absolute;
+	z-index: 200;
+	left: 100%;
+}
+#showContainer .page{
+	display: inline;
+	overflow-y: auto;
+	background: #fff;
+}
+.close{
+	font-size: 20px;
+	line-height: 40px;
+}
+.container{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 0px;
+	overflow: auto;
+	background: #fff;
+}
+
+.fixed-col{
+	position: absolute;
+	padding-right: 0.5%;
+	top: 170px;
+	width: 3.5%;
+	text-align: left;
+	overflow: hidden;
+}
+.fixed-col-1{
+	left: 2.5%;
+}
+.fixed-col-2{
+	position: absolute;
+	left: 27.5%;
+}
+.fixed-col-3{
+	left: 52.5%;
+}
+.fixed-col-4{
+	left: 77.5%;
+}
+.page{
+	display: none;
+	float: left;
+	width: 100%;
+	background: #fff;
+}
+.content{
+	margin: 0px auto;
+	padding-bottom: 100px;
+	width: 80%;
+}
+.left-col{
+	float: left;
+	width: 17%;
+	padding-right: 3%;
+	min-height: 20px;
+	font-family: "inconsolata", "NSimSun", "SimSun", "STSong", "AR PL SungtiL GB", "TW\-Sung", "WenQuanYi Bitmap Song"；
+;
+}
+.left-col p{
+	margin: 10px 0;
+}
+.find-block{
+	top: 40%;
+	left: 10%;
+}
+.find-block h1{
+	font-size: 30px;
+	cursor: pointer;
+}
+.find-block h1:hover{
+	color: #EDBD03;
+}
+.right-col{
+	float: left;
+	width: 80%;
+	padding-bottom: 70px;
+}
+#indexList{
+	position:relative;
+} 
+#indexList li{
+	display:none;
+}
+.news-item{
+	cursor: pointer;
+	overflow: hidden;
+}
+.news{
+	background: rgba(0, 0, 0, 0.3);
+	position: absolute;
+	right: 100%;
+	bottom: 5px;
+	padding: 5%;
+	width: 90%;
+	cursor: pointer;
+	color: #fff;
+	font-size: 10px;
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+.photo-album{
+	float: left;
+	width: 140px;
+	padding: 10px;
+	background: #fff;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.photo-album .album-cover{
+	float: left;
+	width: 100%;
+	height: 190px;
+	overflow: hidden;
+}
+.title-list{
+	float: left;
+	width: 100%;
+}
+.title-list div{
+	float: left;
+	margin: 0;
+	padding: 20px 5% 20px 5%;
+	width: 15%;
+	background: #fff;
+	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.title-list div h2{
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	overflow:hidden;
+}
+.title-list div p{
+	text-align: right;
+	margin: 0;
+	font-size: 15px;
+	font-family: "inconsolata", "NSimSun", "SimSun", "STSong", "AR PL SungtiL GB", "TW\-Sung", "WenQuanYi Bitmap Song";
+}

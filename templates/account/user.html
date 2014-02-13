@@ -1,0 +1,365 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Find</title>
+	<link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
+	<link type="text/css" rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="/static/css/styles.css">
+	<link type="text/css" rel="stylesheet" href="/static/css/jquery.simple-dtpicker.css">
+</head>
+<body class="login-page">
+	<div id="main-carousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+			<li data-target="#main-carousel" data-slide-to="1"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="/static/img/carousel-bg2.jpg">
+				<div class="carousel-description">
+					<h2>在浙大找到你想要的</h2>
+					<p>WE ARE IN ZHEJIANG UNIVERSITY</p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="/static/img/login-banner.png">
+				<div class="carousel-description">
+					<h2>在浙大找到你想要的</h2>
+					<p>WE ARE IN ZHEJIANG UNIVERSITY</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#main-carousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="#main-carousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+
+	<div class="login-logo">
+		<div class="login-logo-bg"></div>
+		<div class="login-logo-img">
+			<img src="/static/img/logo.png">
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="header">
+			<h1 class="main-color">个人资料<small class="main-color">ABOUT YOU</small></h1>
+		</div>
+		<form name="usr-info-form" method = "post" enctype=multipart/form-data>
+			<div class="usr-info">
+				<h1>Part 1<small>基本资料</small></h1>
+				<div class="usr-info-left-col">
+					<img id="avatarImg" class="avatar" src="/static/img/avatar.jpg">
+					<a id="uploadAvatarBtn" class="btn btn-primary btn-block">点击上传头像</a>
+					<input name="photo" type="file" id="uploadAvatarInput" class="hidden" onchange="uploadAvatar(this);">
+					<p class="help-block">支持 JPG、JPEG、GIF、BMP 和 PNG 文件，最大 15M</p>
+				</div>
+
+				<div class="usr-info-right-col">
+					<div class="row">
+						<label for="usrInfoName">昵称：</label>
+						<input name="name" type="text" id="usrInfoName">
+					</div>
+
+					<div class="row">
+						<label>年级：</label>
+						<select name="grade">
+							<option value="1">大一</option>
+							<option value="2">大二</option>
+							<option value="3">大三</option>
+							<option value="4">大四</option>
+							<option value="5">大五</option>
+							<option value="6">研一</option>
+							<option value="7">研二</option>
+							<option value="8">研三</option>
+							<option value="9">博士及以上</option>
+							<option value="10">已毕业</option>
+						</select>
+					</div>
+
+					<div class="row">
+						<label>校区：</label>
+						<select name="campus">
+							<option value="紫金港">紫金港</option>
+							<option value="玉泉">玉泉</option>
+							<option value="西溪">西溪</option>
+							<option value="之江">之江</option>
+							<option value="华家池">华家池</option>
+							<option value="其他">其他</option>
+						</select>
+					</div>
+
+					<div class="row">
+						<label>专业类别：</label>
+						<label><input type="radio" name="major" value="理科" checked="checked">理科</label>
+						<label><input type="radio" name="major" value="文科">文科</label>
+						<label><input type="radio" name="major" value="工科">工科</label>
+						<label><input type="radio" name="major" value="社科">社科</label>
+						<label><input type="radio" name="major" value="医学">医学</label>
+						<label><input type="radio" name="major" value="农学">农学</label>
+						<label><input type="radio" name="major" value="其他">其他</label>
+					</div>
+
+					<div class="row">
+						<label>恋爱状况：</label>
+						<label><input type="radio" name="love" value="单身" checked="checked">单身</label>
+						<label><input type="radio" name="love" value="恋爱中">恋爱中</label>
+						<label><input type="radio" name="love" value="其他">其他</label>
+					</div>
+
+					<div class="row">
+						<label>兴趣标签：</label>
+						<textarea name="interest-tag" class="form-control" placeholder="使用空格隔开，如：编程 动漫 足球"></textarea>
+					</div>
+
+					<div class="row">
+						<label>性格标签：</label>
+						<textarea name="character-tag" class="form-control" placeholder="使用空格隔开，如：中二 闷骚 热情"></textarea>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="usr-info">
+				<h1>Part 2<small>详细资料</small></h1>
+				<p class="text-danger">我们承诺保证您的隐私，资料绝不外泄</p>
+				<div class="usr-info-left-col">
+				</div>
+
+				<div class="usr-info-right-col">
+					<div class="row">
+						<label>真实姓名：</label>
+						<input name="real-name" type="text">
+						<div class="pull-right">
+							<label><input name="real-name-open" type="radio" value="true">公开 </label>
+							<label><input name="real-name-open" type="radio" value=0 checked="checked">不公开</label>
+						</div>
+					</div>
+					<div class="row">
+						<label>出生日期：</label>
+						<input type="text" name="birthday" id="usrInfoBirthday">
+						<div class="pull-right">
+							<label><input name="birthday-open" type="radio" value="true">公开 </label>
+							<label><input name="birthday-open" type="radio" value=0 checked="checked">不公开</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<label>星&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;座：</label>
+						<select name="constellation">
+							<option value="白羊座">白羊座</option>
+							<option value="金牛座">金牛座</option>
+							<option value="双子座">双子座</option>
+							<option value="巨蟹座">巨蟹座</option>
+							<option value="狮子座">狮子座</option>
+							<option value="处女座">处女座</option>
+							<option value="天秤座">天秤座</option>
+							<option value="天蝎座">天蝎座</option>
+							<option value="射手座">射手座</option>
+							<option value="摩羯座">摩羯座</option>
+							<option value="水瓶座">水瓶座</option>
+							<option value="双鱼座">双鱼座</option>
+						</select>
+						<div class="pull-right">
+							<label><input name="constellation-open" type="radio" value="true">公开 </label>
+							<label><input name="constellation-open" type="radio" value=0 checked="checked">不公开</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<label>家&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乡：</label>
+						<select id="province" name="province">
+							<option value="浙江">浙江</option>
+						</select>
+						<select id="city" name="city">
+							<option value="杭州">杭州</option>
+						</select>
+						<div class="pull-right">
+							<label><input name="home-open" type="radio" value="true">公开 </label>
+							<label><input name="home-open" type="radio" value=0 checked="checked">不公开</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<label>血&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：</label>
+						<select name="blood">
+							<option value="A">A</option>
+							<option value="B">B</option>
+							<option value="AB">AB</option>
+							<option value="O">O</option>
+							<option value="其他">其他</option>
+						</select>
+						<div class="pull-right">
+							<label><input name="blood-open" type="radio" value="true">公开 </label>
+							<label><input name="blood-open" type="radio" value=0 checked="checked">不公开</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<label>身&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高：</label>
+						<input name="height" type="text" value=163>&nbsp;cm
+						<div class="pull-right">
+							<label><input name="height-open" type="radio" value="true">公开 </label>
+							<label><input name="height-open" type="radio" value=0 checked="checked">不公开</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<label>体&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重：</label>
+						<input name="weight" type="text" value=55>&nbsp;kg
+						<div class="pull-right">
+							<label><input name="weight-open" type="radio" value="true">公开 </label>
+							<label><input name="weight-open" type="radio" value=0 checked="checked">不公开</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<label>电话号码：</label>
+						<input name="phone" type="text">
+						<div class="pull-right">
+							<label><input name="phone-open" type="radio" value="true">公开 </label>
+							<label><input name="phone-open" type="radio" value=0 checked="checked">不公开</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<label>常用邮箱：</label>
+						<input name="mail" type="text">
+						<div class="pull-right">
+							<label><input name="mail-open" type="radio" value="true">公开 </label>
+							<label><input name="mail-open" type="radio" value=0 checked="checked">不公开</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="usr-info">
+				<h1>Part 3<small>我心中的 TA</small></h1>
+				<p class="text-danger">我们会根据您的期待进行匹配，请认真填写</p>
+				<div class="usr-info-left-col">
+				</div>
+
+				<div class="usr-info-right-col">
+					<div class="row">
+						<label class="pull-left">TA 的年级：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<div class="pull-left">
+							<select name="TA-grade-s">
+								<option value="1">大一</option>
+								<option value="2">大二</option>
+								<option value="3">大三</option>
+								<option value="4">大四</option>
+								<option value="5">大五</option>
+								<option value="6">研一</option>
+								<option value="7">研二</option>
+								<option value="8">研三</option>
+								<option value="9">博士及以上</option>
+								<option value="10">已毕业</option>
+							</select>
+							&nbsp;-&nbsp;
+							<select name="TA-grade-e">
+								<option value="1">大一</option>
+								<option value="2">大二</option>
+								<option value="3">大三</option>
+								<option value="4">大四</option>
+								<option value="5">大五</option>
+								<option value="6">研一</option>
+								<option value="7">研二</option>
+								<option value="8">研三</option>
+								<option value="9">博士及以上</option>
+								<option value="10">已毕业</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="row">
+						<label>TA 的出生年份：</label>
+						<select name="TA-brthd-s">
+							<option value=0>--不限--</option>
+						</select>
+						&nbsp;-&nbsp;
+						<select name="TA-brthd-e">
+							<option value=0>--不限--</option>
+						</select>
+					</div>
+
+					<div class="row">
+						<label>TA 的身高：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<input name="TA-height-s" type="text" value=0>
+						&nbsp;-&nbsp;
+						<input name="TA-height-e" type="text" value=0>
+						&nbsp;cm
+					</div>
+
+					<div class="row">
+						<label>TA 的校区：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label><input name="TA-compus" value="紫金港" type="checkbox">紫金港</label>
+						<label><input name="TA-compus" value="玉泉" type="checkbox">玉泉</label>
+						<label><input name="TA-compus" value="西溪" type="checkbox">西溪</label>
+						<label><input name="TA-compus" value="之江" type="checkbox">之江</label>
+						<label><input name="TA-compus" value="华家池" type="checkbox">华家池</label>
+						<label><input name="TA-compus" value="不限" type="checkbox" checked="checked">不限</label>
+					</div>
+
+					<div class="row">
+						<label>TA 的家乡：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<select id="TAprovince" name="TA-province">
+							<option value="浙江">浙江</option>
+						</select>
+						<select id="TAcity" name="TA-city">
+							<option value="杭州">杭州</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<input class="btn btn-primary btn-lg btn-block" type="submit" value="保存"></input>
+		</form>
+
+		<footer id="footer">
+			Find 1.0 ALPHA. Copyright © 2013 Find项目组. <br>
+			All rights reserved.
+		</footer>
+	</div>
+<script src="/static/js/jquery-1.10.2.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/jquerydoubleselect.min.js"></script>
+<script type="text/javascript" src="/static/js/location.js"></script>
+<script type="text/javascript" src="/static/js/jquery.simple-dtpicker.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#uploadAvatarBtn').click(function(){
+		$('#uploadAvatarInput').click();
+	});
+	$('#usrInfoBirthday').appendDtpicker({"dateOnly": 'true'});
+	$('#usrInfoTABrthdStart').appendDtpicker({"dateOnly": 'true'});
+	$('#usrInfoTABrthdEnd').appendDtpicker({"dateOnly": 'true'});
+});
+
+function uploadAvatar(file){
+	var reader = new FileReader();
+	reader.readAsDataURL(file.files[0]);
+	console.log(reader);
+	reader.onload = function(evt){
+		_('avatarImg').src = reader.result;
+	}
+}
+
+$(document).ready(function(){
+	var t = setTimeout(function(){
+		tSlide = setInterval(function(){
+			if (document.body.scrollTop > 370 || Math.abs(document.body.clientHeight - document.documentElement.clientHeight) <= (document.documentElement.scrollTop || document.body.scrollTop)) clearInterval(tSlide);
+			document.body.scrollTop += 2;
+		}, 1);
+	}, 500);
+});
+</script>
+</body>
+</html>

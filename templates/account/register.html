@@ -1,0 +1,129 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Find</title>
+	<link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
+	<link type="text/css" rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="/static/css/styles.css">
+	<link type="text/css" rel="stylesheet" href="/static/css/jquery.simple-dtpicker.css">
+</head>
+<body class="login-page">
+	<div id="main-carousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+			<li data-target="#main-carousel" data-slide-to="1"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="/static/img/login-banner.png">
+				<div class="carousel-description">
+					<h2>在浙大找到你想要的</h2>
+					<p>WE ARE IN ZHEJIANG UNIVERSITY</p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="/static/img/carousel-bg2.jpg">
+				<div class="carousel-description">
+					<h2>在浙大找到你想要的</h2>
+					<p>WE ARE IN ZHEJIANG UNIVERSITY</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#main-carousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="#main-carousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+
+	<div class="login-logo">
+		<div class="login-logo-bg"></div>
+		<div class="login-logo-img">
+			<img src="/static/img/logo.png">
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="header">
+			<h1>注册<small>Register</small></h1>
+			<p class="text-danger">由于现今网站只对浙江大学学生开放，为保证会员信息的真实可靠，请您使用浙江大学校网邮注册。</p>
+			<p class="text-danger">让我们共同努力一起创造一个安全可靠的网络安全平台，在这里找到你想找到的</p>
+		</div>
+		<form name="register-form" class="register-form form-horizontal" role="form" method="post">
+			<div class="form-group">
+				<label for="registerEmail">注册邮箱：</label>
+				<div class="input-group">
+					<input name="email" type="text" class="form-control" id="registerEmail" placeholder="E-mail">
+					<div class="input-group-btn">
+						<button id="mailType" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">@zju.edu.cn ∨</button>
+						<ul class="dropdown-menu pull-right pointer">
+							<li><label class="pointer">@zju.edu.cn<input name="mail-type" type="radio" class="hidden" checked="checked" value="@zju.edu.cn"></label></li>
+							<li><label class="pointer">@st.zju.edu.cn<input name="mail-type" type="radio" class="hidden" value="@st.zju.edu.cn"></label></li>
+						</ul>
+					</div><!-- /btn-group -->
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="registerPassword">创建密码：</label>
+				<input name="pwd" type="password" class="form-control" id="registerPassword" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<label for="registerPasswordAgain">确认密码：</label>
+				<input type="password" class="form-control" id="registerPasswordAgain" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<label for="registerName">昵称：</label>
+				<input name="nickname" type="text" class="form-control" id="registerName" placeholder="昵称">
+			</div>
+			<div class="form-group">
+				<label>性别：</label>
+				<label>
+					<input type="radio" name="gender" value="male" checked>
+					男
+				</label>
+				<label>
+					<input type="radio" name="gender" value="female">
+					女
+				</label>
+				<div class="text-warning">* 注册之后不可修改</div>
+			</div>
+			<div class="form-group">
+				<label for="registerVerify">验证码：<img id="verifyRefresh" border="0" src="verify.php"/><a onclick="document.getElementById('verifyRefresh').src='verify.php?t='+Math.random()">看不清换一张？</a></label>
+				<input name="verify" type="text" class="form-control" id="registerVerify" placeholder="验证码">
+			</div>
+			<div class="form-group">
+				<input id="registerBtn" class="btn btn-lg btn-primary btn-block" type="submit" value="立即注册"></input>
+			</div>
+		</form>
+
+		<footer id="footer">
+			Find 1.0 ALPHA. Copyright © 2013 Find项目组. <br>
+			All rights reserved. {{error}}
+		</footer>
+	</div>
+<script src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.simple-dtpicker.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('*[name = mail-type]').click(function() {
+		$('#mailType').html(this.value + ' ∨');
+	});
+});
+$(document).ready(function(){
+	var t = setTimeout(function(){
+		tSlide = setInterval(function(){
+			if (document.body.scrollTop > 370 || Math.abs(document.body.clientHeight - document.documentElement.clientHeight) <= (document.documentElement.scrollTop || document.body.scrollTop)) clearInterval(tSlide);
+			document.body.scrollTop += 2;
+		}, 1);
+	}, 500);
+});
+</script>
+</body>
+</html>

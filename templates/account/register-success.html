@@ -1,0 +1,88 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Find</title>
+	<link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
+	<link type="text/css" rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="/static/css/styles.css">
+	<link type="text/css" rel="stylesheet" href="/static/css/jquery.simple-dtpicker.css">
+</head>
+<body class="login-page">
+	<div id="main-carousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+			<li data-target="#main-carousel" data-slide-to="1"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="/static/img/login-banner.png">
+				<div class="carousel-description">
+					<h2>在浙大找到你想要的</h2>
+					<p>WE ARE IN ZHEJIANG UNIVERSITY</p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="/static/img/carousel-bg2.jpg">
+				<div class="carousel-description">
+					<h2>在浙大找到你想要的</h2>
+					<p>WE ARE IN ZHEJIANG UNIVERSITY</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#main-carousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="#main-carousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+
+	<div class="login-logo">
+		<div class="login-logo-bg"></div>
+		<div class="login-logo-img">
+			<img src="/static/img/logo.png">
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="text-center">
+			<img src="/static/img/register-sucess.jpg">
+			<h1 class="main-color">注册成功</h1>
+			<h4><label id="countdown">5</label> 秒后自动跳转</h4>
+			<h3>若无跳转<a href="/userinfo">请点击这里</a>编辑个人资料</h3>
+		</div>
+
+		<footer id="footer">
+			Find 1.0 ALPHA. Copyright © 2013 Find项目组. <br>
+			All rights reserved.
+		</footer>
+	</div>
+<script src="/static/js/jquery-1.10.2.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var t0 = setTimeout(function(){
+		location = "/userinfo";
+	}, 5000);
+	var t1 = setInterval(function(){
+		var second = parseInt($('#countdown').html());
+		if (second < 2) clearInterval(t1);
+		$('#countdown').html(second - 1);
+	}, 1000);
+});
+$(document).ready(function(){
+	var t = setTimeout(function(){
+		tSlide = setInterval(function(){
+			if (document.body.scrollTop > 370 || Math.abs(document.body.clientHeight - document.documentElement.clientHeight) <= (document.documentElement.scrollTop || document.body.scrollTop)) clearInterval(tSlide);
+			document.body.scrollTop += 2;
+		}, 1);
+	}, 500);
+});
+</script>
+</body>
+</html>
